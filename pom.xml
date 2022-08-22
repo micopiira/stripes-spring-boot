@@ -12,13 +12,17 @@
   <artifactId>stripes-spring-boot-builder</artifactId>
   <modelVersion>4.0.0</modelVersion>
   <packaging>pom</packaging>
-  <version>2.5.14</version>
+  <version>2.5.14-SNAPSHOT</version>
 
   <modules>
     <module>stripes-spring-boot-autoconfigure</module>
     <module>stripes-spring-boot-starter</module>
     <module>stripes-spring-boot-sample</module>
   </modules>
+
+  <scm>
+    <developerConnection>scm:git:git@github.com:micopiira/stripes-spring-boot.git</developerConnection>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,6 +44,27 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>3.0.0-M5</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 
   <dependencyManagement>
@@ -75,4 +100,19 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <distributionManagement>
+    <repository>
+      <id>nexus</id>
+      <name>Releases</name>
+      <url>https://mordor.disec.fi:8081/repository/maven-releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>Snapshot</name>
+      <url>https://mordor.disec.fi:8081/repository/maven-snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+
 </project>
