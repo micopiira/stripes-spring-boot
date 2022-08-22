@@ -14,16 +14,16 @@ import net.sourceforge.stripes.util.Log;
 
 
 /**
- * <p>Code taken from MyBatis, with a few slight modifications:<ul>
+ * Code taken from MyBatis, with a few slight modifications:<ul>
  *   <li>constructor is made public.</li>
  *   <li>added some log traces on catch blocks to avoid warnings on Sonar and similar tools.</li>
- *   <li>java 8 iterating on {@link #getResources( String, ClassLoader )}</li>
+ *   <li>java 8 iterating on {@link #getResources(String, ClassLoader)}</li>
  * </ul>
- * </p>
+ *
  * A class to wrap access to multiple class loaders making them work as one
  *
  * @author Clinton Begin
- * @see https://github.com/mybatis/mybatis-3/blob/master/src/main/java/org/apache/ibatis/io/ClassLoaderWrapper.java
+ * @see <a href="https://github.com/mybatis/mybatis-3/blob/master/src/main/java/org/apache/ibatis/io/ClassLoaderWrapper.java">ClassLoaderWrapper.java</a>
  */
 public class ClassLoaderWrapper {
 
